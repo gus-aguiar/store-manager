@@ -5,7 +5,6 @@ const getAll = async () => {
     'SELECT * FROM StoreManager.products;',
   );
   return products;
-
 };
 
 const getById = async (id) => {
@@ -17,10 +16,7 @@ const getById = async (id) => {
   return product;
 };
 
-
-
 module.exports = {
   getAll,
   getById,
 };
-
