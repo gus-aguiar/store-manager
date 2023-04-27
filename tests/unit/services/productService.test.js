@@ -21,7 +21,7 @@ describe('Testa o service de produtos', () => {
 
     it('getById', async () => {
 
-      sinon.stub(productService, 'getById').resolves({ type: null, message: product });
+      sinon.stub(productModel, 'getById').resolves(product);
 
       const result = await productService.getById(1);
 
