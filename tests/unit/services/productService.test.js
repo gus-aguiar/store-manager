@@ -29,6 +29,15 @@ describe('Testa o service de produtos', () => {
       expect(result.message).to.be.deep.equal(product);
 
     });
+
+    it('insert', async () => {
+      const insertId = 1;
+      sinon.stub(productModel, 'insert').resolves(insertId);
+
+      const result = await productService.insert(product);
+
+      expect(result).to.be.an('object');
+    });
   });
 });
 

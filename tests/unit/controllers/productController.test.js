@@ -50,5 +50,21 @@ describe('Testa o controller de produtos', () => {
     expect(res.status).to.have.been.calledWith(200);
     expect(res.json).to.have.been.calledWith({ "id": 1, "name": "Martelo de Thor" });
   });
+
+  it('insert', async () => {
+    const res = {};
+    const req = { body: { "name": "Martelo de Thor" } };
+
+    res.status = sinon.stub().returns(res);
+    res.json = sinon.stub().returns();
+
+    sinon
+      .stub(productService, 'insert')
+      .resolves({ type: null, message: mockGetProductById });
+
+    await productController.insert(req, res);
+
+    expect(res.status).to.have.been.calledWith(201);
+    expect(res.json).to.have.been.calledWith(mockGetProductById);
   });
-// });
+});
