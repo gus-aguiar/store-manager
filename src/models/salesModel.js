@@ -8,8 +8,8 @@ const getAllSales = async () => {
   return sales;
 };
 
-const getSalleById = async (id) => {
-  const [[sale]] = await connection.execute(
+const getSaleById = async (id) => {
+  const [sale] = await connection.execute(
     `SELECT * FROM StoreManager.sales_products AS sp
 JOIN StoreManager.sales AS s ON sp.sale_id = s.id
 WHERE id = ?;`,
@@ -20,5 +20,5 @@ WHERE id = ?;`,
 
 module.exports = {
   getAllSales,
-  getSalleById,
+  getSaleById,
 };
