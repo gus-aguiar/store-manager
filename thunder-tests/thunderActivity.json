@@ -32,16 +32,16 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:3001/products/1",
-    "url": "http://localhost:3001/products/",
-    "method": "POST",
+    "url": "http://localhost:3001/products/1",
+    "method": "PUT",
     "sortNum": 0,
     "created": "2023-04-26T20:33:46.722Z",
-    "modified": "2023-04-27T18:31:39.376Z",
+    "modified": "2023-04-30T22:47:34.026Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"ProdutoX\"\n}",
+      "raw": "{\n  \"name\": \"Martelo do Batman\"\n}",
       "form": []
     },
     "tests": []
