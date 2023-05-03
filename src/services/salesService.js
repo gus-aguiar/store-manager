@@ -23,6 +23,16 @@ const getSaleById = async (id) => {
   return { type: null, message: salesReturn };
 };
 
+const updateById = async (reqBody) => {
+  const result = await salesModel.updateById(reqBody);
+  const updateReturn = {
+    id: result[0],
+    itemsSold: result[1],
+
+  };
+  return { type: null, message: updateReturn };
+};
+
 const deleteById = async (id) => {
   const [result] = await salesModel.deleteById(id);
   console.log('result', result);
@@ -36,4 +46,5 @@ module.exports = {
   getAllSales,
   getSaleById,
   deleteById,
+  updateById,
 };
